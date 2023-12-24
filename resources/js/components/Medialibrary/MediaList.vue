@@ -13,7 +13,10 @@
       @end="handleDragEnd"
     >
       <template #item="{ element }">
-        <MediaListItem :media="element" class="mr-2" dusk="nova-media-list-item" />
+        <MediaListItem :field-type="fieldType"
+                       :media="element"
+                       class="mr-2"
+                       dusk="nova-media-list-item"/>
       </template>
     </Draggable>
   </div>
@@ -32,6 +35,13 @@ export default {
   components: {
     Draggable,
     MediaListItem,
+  },
+
+  props: {
+    fieldType: {
+      type: String,
+      default: 'DetailField',
+    },
   },
 
   computed: {

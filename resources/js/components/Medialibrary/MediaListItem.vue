@@ -1,5 +1,5 @@
 <template>
-  <div v-tooltip="tooltip" class="dragging:border-none relative overflow-hidden rounded bg-gray-800 shadow">
+  <div v-tooltip="tooltip" class="dragging:border-none relative overflow-hidden rounded shadow">
     <MediaListItemPreview :media="media">
       <div class="dragging:hidden bg-overlay absolute inset-0 hidden rounded-b group-hover:block">
         <div class="flex h-full items-center justify-center">
@@ -20,7 +20,9 @@
       <loader class="text-white" />
     </div>
 
-    <MediaListItemActions :media="media" class="dragging:hidden" />
+    <MediaListItemActions :field-type="fieldType"
+                          :media="media"
+                          class="dragging:hidden"/>
     <MediaListItemModals :media="media" class="dragging:hidden" />
   </div>
 </template>
@@ -43,6 +45,10 @@ export default {
     media: {
       type: Object,
       required: true,
+    },
+    fieldType: {
+      type: String,
+      default: 'DetailField',
     },
   },
 

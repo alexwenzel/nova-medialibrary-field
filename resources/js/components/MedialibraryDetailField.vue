@@ -6,6 +6,7 @@
         :field="field"
         :resource-name="resourceName"
         :resource-id="resourceId"
+        field-type="DetailField"
       />
     </template>
   </PanelItem>

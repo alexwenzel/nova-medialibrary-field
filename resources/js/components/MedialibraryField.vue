@@ -1,7 +1,8 @@
 <template>
   <Provider :field="field" :resource-name="resourceName" :resource-id="resourceId">
     <div>
-      <MediaList dusk="nova-media-list" />
+      <MediaList :field-type="fieldType"
+                 dusk="nova-media-list"/>
       <MediaUploading v-if="addFiles && !field.readonly" class="mt-2" dusk="nova-media-uploading" />
     </div>
   </Provider>
@@ -34,6 +35,10 @@ export default {
     addFiles: {
       type: Boolean,
       default: false,
+    },
+    fieldType: {
+      type: String,
+      default: 'DetailField',
     },
   },
 }
