@@ -1,8 +1,11 @@
 <template>
   <div class="flex items-center justify-between px-2 py-1">
-    <div class="flex items-center">
-
-      <button v-if="canEdit" type="button" class="focus:outline-none ml-2 flex hover:opacity-50" @click="media.edit()">
+    <div v-if="isFormField"
+         class="flex items-center">
+      <button v-if="canEdit"
+              type="button"
+              class="focus:outline-none flex hover:opacity-50"
+              @click="media.edit()">
         <Icon type="pencil-alt" width="18" height="18" />
       </button>
 
@@ -54,16 +57,6 @@
               <icon-crop width="20" height="20" />
               <span class="ml-2">{{ __('Crop') }}</span>
             </DropdownMenuItem>
-
-            <DropdownMenuItem
-              as="button"
-              v-if="canRegenerate"
-              class="flex items-center hover:bg-gray-100"
-              @click="media.regenerate()"
-            >
-              <Icon type="refresh" />
-              <span class="ml-2">{{ __('Regenerate') }}</span>
-            </DropdownMenuItem>
           </div>
         </DropdownMenu>
       </template>
@@ -80,6 +73,10 @@ export default {
       type: Object,
       required: true,
     },
+    fieldType: {
+      type: String,
+      default: 'DetailField',
+    },
   },
 
   inject: {
@@ -93,23 +90,21 @@ export default {
   },
 
   computed: {
+    isFormField() {
+      console.log(this)
+      return this.fieldType === 'FormField'
+    },
     readonly() {
       return this.context.field.readonly
     },
     canEdit() {
       return this.media.authorizedToUpdate && !this.readonly
     },
-    canView() {
-      return this.media.authorizedToView
-    },
     canDelete() {
       return this.media.authorizedToDelete && !this.readonly
     },
     canCrop() {
       return this.media.cropperEnabled && !this.readonly
-    },
-    canRegenerate() {
-      return !this.readonly
     },
     hideCopyUrlAction() {
       return this.context.field.hideCopyUrlAction

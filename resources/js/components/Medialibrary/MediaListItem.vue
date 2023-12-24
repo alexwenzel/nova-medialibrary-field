@@ -20,7 +20,9 @@
       <loader class="text-white" />
     </div>
 
-    <MediaListItemActions :media="media" class="dragging:hidden" />
+    <MediaListItemActions :field-type="fieldType"
+                          :media="media"
+                          class="dragging:hidden"/>
     <MediaListItemModals :media="media" class="dragging:hidden" />
   </div>
 </template>
@@ -43,6 +45,10 @@ export default {
     media: {
       type: Object,
       required: true,
+    },
+    fieldType: {
+      type: String,
+      default: 'DetailField',
     },
   },
 
