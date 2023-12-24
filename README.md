@@ -1,17 +1,8 @@
 # Nova Medialibrary
 
-**Important:** This field has different behaviour then the original medialibrary field.
-
 Laravel Nova field for managing the Spatie media library.
 
-This is the documentation for v2 and v3. For v1 follow this [link](https://github.com/aqjw/medialibrary-field/tree/1.2.2)
-
-Features:
- - add media on update/create views
- - add existing media
- - crop media
- - sort media
- - display on the index view
+**Important:** This field has different behaviour then the original medialibrary field. I changed some things to fit my own needs.
 
 ## Table of Contents
 
@@ -45,17 +36,6 @@ Features:
  - [Changelog](#changelog)
  - [Alternatives](#alternatives)
  - [License](#license)
-
-## Screenshots
-
-![index view](https://raw.githubusercontent.com/aqjw/medialibrary-field/master/docs/index.png)
-![create view](https://raw.githubusercontent.com/aqjw/medialibrary-field/master/docs/create.png)
-![details view](https://raw.githubusercontent.com/aqjw/medialibrary-field/master/docs/details.png)
-![update view](https://raw.githubusercontent.com/aqjw/medialibrary-field/master/docs/update.png)
-![media actions](https://raw.githubusercontent.com/aqjw/medialibrary-field/master/docs/actions.png)
-![media crop dialog](https://raw.githubusercontent.com/aqjw/medialibrary-field/master/docs/crop-dialog.png)
-![media details dialog](https://raw.githubusercontent.com/aqjw/medialibrary-field/master/docs/media-details-dialog.png)
-![existing media dialog](https://raw.githubusercontent.com/aqjw/medialibrary-field/master/docs/existing-media-dialog.png)
 
 ## Installation
 
