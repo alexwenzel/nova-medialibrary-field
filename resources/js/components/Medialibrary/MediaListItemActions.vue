@@ -91,7 +91,6 @@ export default {
 
   computed: {
     isFormField() {
-      console.log(this)
       return this.fieldType === 'FormField'
     },
     readonly() {
